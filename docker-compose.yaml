@@ -1,0 +1,10 @@
+  services:                                                                                                                                                  
+    middleware-api:                                                                                                                                          
+      image: middleware-api:secure                                                                                                                           
+      container_name: middleware-api                                                                                                                         
+      restart: unless-stopped                                                                                                                                
+      ports:                                                                                                                                                 
+        - "8081:3000"                                                                                                                                        
+      environment:                                                                                                                                           
+        UPSTREAM_URL: https://api-target.com                                                                                                                 
+        ENCRYPT_SECRET: your-32-char-secret-here!
